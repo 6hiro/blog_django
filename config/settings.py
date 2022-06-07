@@ -27,7 +27,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = []
