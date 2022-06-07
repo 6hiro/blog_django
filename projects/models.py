@@ -42,10 +42,4 @@ class Project(models.Model):
         ordering = ['-created_at', ]
 
     def __str__(self):
-        return f"{self.title}-{self.category}"
-
-    def get_text_markdownx(self):
-        return mark_safe(markdownify(self.content))
-
-    def get_preview_content(self):
-        return self.overview[:200]
+        return f"{self.title}"
