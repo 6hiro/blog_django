@@ -9,6 +9,10 @@ dj-database-url = "*"
 django-markdownx = "*"
 six = "*"
 django = "==3.2"
+gunicorn = "*"
+django-heroku = "*"
+pillow = "*"
+whitenoise = "*"
 
 [dev-packages]
 
