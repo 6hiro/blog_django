@@ -27,7 +27,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 
 if DEBUG == True:
     ALLOWED_HOSTS = []
@@ -139,7 +139,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'config/static',
     BASE_DIR / 'accounts/static',
-    # BASE_DIR / 'quizes/static',
     BASE_DIR / 'articles/static'
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

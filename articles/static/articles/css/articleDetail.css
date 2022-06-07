@@ -140,9 +140,6 @@
   padding: 10px;
   color: #333;
 }
-.article .delete-buttton{
-
-}
 .article .delete-button:hover {
   background: #dcdcdc;
   transition: 2s;
