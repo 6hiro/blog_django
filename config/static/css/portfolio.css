@@ -1,9 +1,6 @@
 .card {
     width: 650px;
     padding-bottom: 5px;
-    /* background: #fff; */
-    /* backdrop-filter: blur(2px); */
-    /* box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15); */
     border-radius: 10px;
     margin: 100px auto;
 }

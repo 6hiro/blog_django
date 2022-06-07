@@ -60,7 +60,6 @@
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
-    /* color: #5d62fb; */
     color: #666;
 }
 .field:focus ~ span {
