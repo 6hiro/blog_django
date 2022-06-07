@@ -1,0 +1,94 @@
+ /* GOOGLE FONTS  */
+ @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+ /* VARIABLES CSS */
+ /* :root はグローバルの CSS 変数を宣言するのに便利 */
+:root {
+  /* --header-height: 3rem; */
+  /* Colors  */
+  --hue: 174;
+  --sat: 63%;
+  /* --main-color: #553af6; */
+  --main-color: #5d62fb;
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: #333;
+  --body-color: #f5f6fb; 
+  --container-color: #FFF;
+  --orange-color: #f98010;
+  --pink-color: #e10098;
+  --green-color: #10b981;
+  --blue-color: #5d62fb;
+  --purple-color: #8b5cf6; 
+
+
+  /* Font and typography  */
+  /* --body-font: 'Open Sans', sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI,
+    Helvetica Neue, HelveticaNeue, YuGothic, Yu Gothic Medium, Yu Gothic,
+    Verdana, Meiryo, sans-serif;
+  --title-font-size: 1.8rem;
+  --normal-font-size: .938rem;
+  --tiny-font-size: .625rem;
+
+  /* z index  */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+ 
+@media screen and (min-width: 767px) {
+  :root {
+    --title-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+  /* BASE  */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+  
+html {
+  scroll-behavior: smooth;
+}
+   
+body {
+  /* margin: var(--header-height) 0 0 0; */
+  /* margin: 0; */
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  /* margin-top: 60px;
+  margin-bottom: 75px; */
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 40px;
+}
+   
+ul {
+  list-style: none;
+}
+ 
+a {
+  text-decoration: none;
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+ /*  */
+.container {
+  margin-top: 40px;
+  margin-bottom: 75px;
+}
+@media screen and (max-width: 767px) {
+  html{
+    scroll-padding-top: 60px;
+  }
+}
+.errorlist{
+  color: var(--pink-color);
+}

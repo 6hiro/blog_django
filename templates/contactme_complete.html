@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% load static %}
+<!-- css -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/contactme.css' %}" />
+{% endblock %}
+<!-- js -->
+{% block scripts %}
+<!-- <script src="{% static 'quizes/js/quizlist.js' %}" defer></script> -->
+{% endblock scripts %}
+<!-- title -->
+{% block title %} {{title}} {% endblock %}
+<!-- html -->
+{% block content %}
+<div class="card">
+    <div class="title">送信を完了しました。</div>
+</div>
+{% endblock %}

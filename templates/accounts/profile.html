@@ -1,0 +1,82 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}" />
+{% endblock %}
+<!--  -->
+{% block title %}{{profile.nick_name}}{% endblock %}
+<!--  -->
+{% block content %}
+<div class="profile">
+  <div class="nickName">
+    {{profile.nick_name}}
+  </div>
+  <div class="username">@{{profile.user.username}}</div>
+
+  <div class="change-btns">
+      <a class="change-btn" href="{% url 'accounts:profile_change' %}">プロフィールの変更</a>
+      <!-- <a class="change-btn" href="{% url 'accounts:password_change' %}">パスワードの変更</a> -->
+  </div>
+  <div class="navigation">
+    <div class="favorite_post">
+      <a href="{% url 'accounts:profile' %}" class="active_section">
+        お気に入り
+      </a>
+    </div>
+    <div class="comments">
+      <a href="{% url 'accounts:profile_comments' %}">
+        コメント
+      </a>
+    </div>
+  </div>
+
+  <div class="post-list">
+    <div class="posts">
+      {% for post in favorite_posts %}
+      <ul>
+        <li class="card">
+          <div class="date">
+            <div class="updated-at">
+              {% if post.created_at|date:"Y-m-d" != post.updated_at|date:"Y-m-d" %}
+                <i class='bx bx-revision'></i>
+                {{post.updated_at|date:"Y-m-d"}}
+              {% endif %}
+            </div>
+    
+            <div class="created-at">
+              <i class='bx bx-pencil'></i>
+              {{post.created_at|date:"Y-m-d"}}
+            </div>
+          </div>
+    
+          <div class="title">
+            <a href="{% url 'articles:article-detail' pk=post.id %}">
+              {{post.title}}
+            </a>
+          </div>
+    
+          <a
+            href="{% url 'articles:article-category' category=post.category %}"
+            class="category"
+          >
+            <i class='bx bx-folder-open'></i>
+            {{post.category}}
+          </a>
+
+          <div class="tag-list">
+            {% for tag in post.tags.all %}
+            <a href="{% url 'articles:article-tag' tag=tag.name %}" class="tag">
+              <i class='bx bx-purchase-tag'></i>
+              {{tag.name}}
+            </a>
+            {% endfor %}
+          </div>
+    
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

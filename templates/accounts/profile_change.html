@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile_change.css' %}" />
+<link rel="stylesheet" href="{% static 'accounts/css/messages.css' %}" />
+{% endblock %}
+<!--  -->
+{% block title %}{{profile.nick_name}}{% endblock %}
+<!--  -->
+{% block content %}
+<div class="card">
+  <div class="title">ニックネームを変更</div>
+  <!-- message -->
+
+  <form action="{% url 'accounts:profile_change' %}" method="post">
+    {% csrf_token %}
+    <div class="form_group">
+      {% include 'components/messages.html' %}
+      <div class="nickName">
+        <input
+          type="text"
+          name="nickName"
+          placeholder="ニックネーム"
+          class="field"
+          id="nickNameField"
+          value="{{nickName}}"
+        />
+      </div>
+
+      <button type="submit" class="btn">変更</button>
+
+      <a href="{% url 'accounts:profile' %}" class="to_prfile">戻る</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

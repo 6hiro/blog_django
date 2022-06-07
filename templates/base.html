@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/globals.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menubar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/topbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+    {% block styles %} {% endblock %}
+    <script src="{% static 'js/menubar.js' %}" defer></script>
+    <script src="{% static 'js/topbar.js' %}" defer></script>
+    {% block scripts %} {% endblock %}
+
+    <title>ShiroLog | {% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    {% include 'topbar.html' %}
+
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    {% include 'menubar.html' %}
+    {% include 'footer.html' %}
+
+  </body>
+</html>

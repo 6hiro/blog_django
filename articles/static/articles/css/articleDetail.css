@@ -1,0 +1,201 @@
+.article {
+  margin: 0 65px;
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 75px;
+  border-radius: 10px;
+  position: relative;
+}
+.article .article-title{
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  margin: 10px 10px 10px 0;
+}
+.article .date {
+  color: #777;
+  /* text-align: end; */
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  margin: 15px 0;
+}
+.article .category{
+  font-size:1.1rem;
+  /* text-align: end; */
+  margin: 10px 0;
+}
+.article .category a{
+  color: var(--orange-color);
+}
+.article .tags{
+  /* color: #777; */
+  text-align: center;
+}
+.article .tags a{
+  color: #0000ee;
+}
+/* good button */
+.article .good-button {
+  --size: 38px;
+  width: var(--size);
+  height: var(--size);
+  margin: 10px;
+  position: fixed;
+  right: 0.3rem;
+  background: #f2f2f2;
+  box-shadow: 1px 1px 2px #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+.article .good-button:hover {
+  background: #dcdcdc;
+  transition: 1s;
+}
+.article .good-button .bx-heart {
+  font-size: 25px;
+  cursor: pointer;
+  transition: 1s;
+}
+.article .good-button .bxs-heart {
+  font-size: 25px;
+  cursor: pointer;
+  /* font-size: 20px; */
+  color: var(--pink-color);
+  transition: 1s;
+  animation: liked 1s;
+  border-radius: 50%;
+}
+@keyframes liked{
+    0% {
+        transform: scale(0);
+    }
+    50%{
+      transform: scale(1.2);
+    }
+    75%{
+      /* background-color: #e10098; */
+      /* box-shadow: #e10098 0 0 0 1px; */
+    }
+    100%{
+        transform:  scale(1);
+    }
+}
+.article .comment-button{
+  --size: 38px;
+  width: var(--size);
+  height: var(--size);
+  margin: 10px;
+  position: fixed;
+  right: 0.3rem;
+  top: 13rem;
+  background: #f2f2f2;
+  box-shadow: 1px 1px 2px #555;
+  /* border: 1px solid #dcdcdc; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+
+}
+.article .comment-button:hover {
+  background: #dcdcdc;
+  transition: 1s;
+}
+.article .comment-button a {
+  color: var(--text-color);
+}
+.article .comment-button i {
+  color: var(--text-color);
+  font-size: 25px;
+  cursor: pointer;
+}
+.article .back-to-list{
+  color: #0000ee;
+}
+
+.article .markdown{
+  margin-top: 1.5rem;
+  padding-bottom: 3rem;
+  /* border-bottom: 2px solid rgb(249,250,251); */
+}
+.comment_container{
+  /* margin-top: 2rem; */
+  /* border-top: 2px solid rgb(249,250,251); */
+  /* padding-top: 1rem; */
+}
+.comment_container .comment_title{
+  font-size: 20px;
+  font-weight: 800;
+}
+.comment-list{
+  margin-top: 4rem;
+}
+
+.comment-list .comments .card {
+  padding: 15px;
+  background: #fff;
+  /* box-shadow: 2px 2px 4px rgb(0 0 0 / 25%); */
+  border: 1px solid rgba(229, 231, 235, 1);
+  border-radius: 10px;
+  margin-top: 4px;
+  min-width: 300px;
+  
+}
+.comment-list .comments .card .date {
+  display: flex;
+  justify-content: right;
+  color: #777;
+  margin: 0px;
+}
+.comment-list .comments .card .comment {
+  padding: 10px;
+  color: #333;
+}
+.article .delete-buttton{
+
+}
+.article .delete-button:hover {
+  background: #dcdcdc;
+  transition: 2s;
+}
+.article .delete-buttton .btn{
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.article .delete-buttton .btn{
+  --size: 25px;
+  height: var(--size);
+  width: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  box-shadow: 1px 1px 2px #ccc;
+  /* border: 1px solid #dcdcdc; */
+  border-radius: 50%;
+  margin: 0 0 0 auto;
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .article{
+    margin: 0px;
+    margin-bottom: 200px;
+    padding: 15px;
+  }
+  .article .good-button {
+    bottom: 9rem;;
+  }
+  .article .comment-button {
+    top: unset;
+    bottom: 5rem;;
+  }
+  /* .article .comment_container{
+    padding-top: 60px;
+    margin-top:-60px;
+  } */
+}

@@ -1,0 +1,60 @@
+.card {
+    position: fixed;
+    min-height: 300px;
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card .title {
+    text-align: center;
+    color: #333;
+    margin: 35px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.card .form_group {
+    width: 300px;
+    height: auto;
+    margin: 10px auto;
+}
+.card .form_group .field {
+    width: 100%;
+    border: 10px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    /* font-size: 14px; */
+    margin-bottom: 22px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.card .form_group .field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.card .form_group .btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    /* background: #0fbcf9; */
+    background: var(--main-color);
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+.card .form_group .btn:hover {
+    background-color: #4246c2;
+}
+.card .form_group a{
+    display: block;
+    margin: 20px 0;
+    color: #333;
+}
+.card .to_prfile{
+    text-align: end;
+}

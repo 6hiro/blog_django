@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/registration.css' %}" />
+<link rel="stylesheet" href="{% static 'accounts/css/messages.css' %}" />
+{% endblock %}
+<!--  -->
+{% block scripts %}
+<!-- <script src="{% static 'account/js/registration.js' %}" defer></script> -->
+{% endblock %}
+<!--  -->
+{% block title %} {% endblock %}
+<!--  -->
+{% block content %}
+<div class="card">
+  <div class="title">アカウント登録</div>
+  <form action="{% url 'accounts:registration' %}" method="post">
+    {% csrf_token %}
+
+    <div class="form_group">
+      <!-- message -->
+      {% include 'components/messages.html' %}
+      <div class="username content">
+        <!-- <i class="bx bx-envelope"></i> -->
+        <input
+          type="text"
+          name="username"
+          class="field"
+          id="usernameField"
+          value="{{username}}"
+          placeholder=" "
+          required
+        />
+        <span>ユーザーネーム</span>
+      </div>
+
+      <div class="email content">
+        <!-- <i class="bx bx-envelope"></i> -->
+        <input
+          type="email"
+          name="email"
+          class="field"
+          id="emailField"
+          value="{{email}}"
+          placeholder=" "
+          required
+        />
+        <span>メールアドレス</span>
+      </div>
+
+      <!-- <div class="email_feedback_area" style="display: none"></div> -->
+      <div class="password content">
+        <!-- <i class="bx bx-lock"></i> -->
+        <input
+          type="password"
+          name="password"
+          class="field"
+          id="passwordField"
+          placeholder=" "
+          required
+        />
+        <span>パスワード（7字以上）</span>
+      </div>
+
+      <div class="password content">
+        <!-- <i class="bx bx-lock"></i> -->
+        <input
+          type="password"
+          name="repassword"
+          class="field"
+          id="repasswordField"
+          placeholder=" "
+          required
+        />
+        <span>パスワード確認</span>
+      </div>
+
+      <button type="submit" class="btn">登録</button>
+      <hr />
+      <div class="login">
+        <a href="{% url 'accounts:login' %}" class="to-login">ログイン画面へ</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

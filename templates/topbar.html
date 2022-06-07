@@ -1,0 +1,90 @@
+<header class="header">
+  <div class="nav">
+    <div class="logo">ShiroLog</div>
+
+    <div class="icons" id="icons">
+      <div class="icon menuBtn" id="menuBtn">
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+      </div>
+    </div>
+
+    <div class="search">
+      <form
+        action="{% url 'articles:article-search' %}"
+        class="search__form"
+        method="get"
+      >
+        <input
+          type="text"
+          placeholder="キーワード検索"
+          class="search__form__input"
+          name="q"
+          value="{{ request.GET.q }}"
+          required
+        />
+        <button class="button">
+          <i class="bx bx-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="menubar" id="activeMenubar">
+    <div class="menuTitle">Menu</div>
+    <ul class="links">
+      <li class="search">
+        <!-- <div class="search"> -->
+          <form
+            action="{% url 'articles:article-search' %}"
+            class="search__form"
+            method="get"
+          >
+            <input
+              type="text"
+              placeholder="キーワード検索"
+              class="search__form__input"
+              name="q"
+              value="{{ request.GET.q }}"
+              required
+            />
+            <button class="button">
+              <i class="bx bx-search"></i>
+            </button>
+          </form>
+        <!-- </div> -->
+      </li>
+
+      {% if request.user.is_authenticated %}
+      <li class="">
+        <a href="{% url 'accounts:settings' %}" class="link">
+          <!-- <i class='bx bx-cog nav__icon'></i> -->
+          設定
+        </a>
+      </li>
+      <li class="">
+        <!-- <a href="/"> -->
+        <a href="{% url 'accounts:logout' %}" class="link">
+          <!-- <i class="bx bx-log-out nav__icon"></i> -->
+          ログアウト
+        </a>
+      </li>
+      {% else %}
+      <li class="">
+        <a href="{% url 'accounts:login' %}" class="link">
+          <!-- <i class='bx bx-log-in nav__icon'></i> -->
+          ログイン
+        </a>
+      </li>
+
+      <li class="">
+        <a href="{% url 'accounts:registration' %}" class="link">
+          <!-- <i class='bx bx-user-plus nav__icon'></i> -->
+          ユーザー登録
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</header>

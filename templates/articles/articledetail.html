@@ -1,0 +1,148 @@
+{% extends "base.html" %} {% load static %}
+<!-- css -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'articles/css/articledetail.css' %}" />
+<link rel="stylesheet" href="{% static 'articles/css/commentForm.css' %}" />
+<link rel="stylesheet" href="{% static 'articles/css/markdown.css' %}" />
+<link
+  rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css"
+/>
+{% endblock %}
+<!-- js -->
+{% block scripts %}
+<script src="{% static 'articles/js/articledetail.js' %}" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+{% endblock scripts %}
+<!-- title -->
+{% block title %} {{post.title}} {% endblock %}
+<!-- html -->
+{% block content %}
+
+<div class="article">
+  <form class="good-button" id="good-button">
+    {% csrf_token %} {% if is_liked %}
+
+    <i class="bx bxs-heart like" id="like" data-postid="{{post.id}}"></i>
+    {% else %}
+    <i class="bx bx-heart like" id="like" data-postid="{{post.id}}"></i>
+    {% endif %}
+  </form>
+  <div class="comment-button">
+    <a href="#comment">
+      <i class="bx bx-comment-detail"></i>
+    </a>
+  </div>
+
+  <div class="category">
+    <a
+      href="{% url 'articles:article-category' category=post.category %}"
+      class="category"
+    >
+      <i class="bx bx-folder-open"></i>
+      {{ post.category}}
+    </a>
+  </div>
+  <div class="article-title">{{ post.title }}</div>
+
+  <div class="date">
+    <div class="updated-at">
+      {% if post.created_at|date:"Y-m-d" != post.updated_at|date:"Y-m-d" %}
+      <i class="bx bx-revision"></i>
+      {{ post.updated_at|date:"Y-m-d" }} {% endif %}
+    </div>
+
+    <div class="created-at">
+      <i class="bx bx-pencil"></i>
+      {{ post.created_at|date:"Y-m-d" }}
+    </div>
+  </div>
+
+
+  <div class="tags">
+    {% if post.tags.all != None %} {% for tag in post.tags.all %}
+    <a href="{% url 'articles:article-tag' tag=tag.name %}" class="tag">
+      <i class="bx bx-purchase-tag"></i>
+      {{tag.name}}
+    </a>
+    {% endfor %} {% endif %}
+  </div>
+
+  <div class="markdown">{{ post.get_text_markdownx | safe }}</div>
+
+  <div class="comment_container"  id="comment">
+    <!-- <div>Comment</div> -->
+    <div class="comment_title">
+      <i class='bx bxs-right-arrow'></i>
+      コメント
+    </div>
+
+    <form action="{% url 'articles:comment-create' post.id %}" method="post" class="comment_form">
+      {% csrf_token %}
+      <div class="comment_form__input__content">
+        <textarea
+          type="text"
+          name="comment"
+          rows="5"
+          cols="45"
+          minlength="1"
+          maxlength="250"
+          required
+          id="commentField"
+          value="{{comment}}"
+        ></textarea>
+        <span>コメント(250文字以内)</span>
+      </div>
+      <p>※コメントするにはログインが必要です。</p>
+
+      <div class="comment_button_style">
+        <button type="submit" class="comment_button">送信</button>
+      </div>
+    </form>
+
+    <div class="comment-list">
+
+      <div class="comments">
+        {% for comment in post.comment.all %}
+        <ul>
+          <li class="card">
+            <div class="date">
+              <div class="created-at">
+                <i class="bx bx-pencil"></i>
+                {{comment.created_at|date:"Y-m-d"}}
+              </div>
+            </div>
+            <div>
+              {{comment.commented_by.profile.nick_name}}
+              @{{comment.commented_by.username}}
+            </div>
+  
+            <div class="comment">
+              {{comment.comment}}
+            </div>
+
+            {% if comment.commented_by.id == request.user.id %}
+            <!-- <div class="delete-buttton" > -->
+              <form action="{% url 'articles:comment-delete' comment.id %}" method="post" class="delete-buttton" id="delete-button">
+              {% csrf_token %}
+                <button type="submit" class="btn">
+                  <i class='bx bxs-trash-alt'></i>
+                </button>
+              </form>
+            <!-- </div> -->
+            {% endif %}
+
+          </li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- <a href="{% url 'articles:article-list' %}" class="back-to-list">一覧へ</a> -->
+</div>
+
+{% endblock %}

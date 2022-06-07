@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/settings.css' %}" />
+<link rel="stylesheet" href="{% static 'accounts/css/messages.css' %}" />
+{% endblock %}
+<!--  -->
+{% block scripts %}
+<script src="{% static 'accounts/js/settings.js' %}" defer></script>
+{% endblock scripts %}
+{% block title %}設定{% endblock %}
+<!--  -->
+{% block content %}
+<div class="settings">
+    <div class="settings_title">設定</div>
+    <br />
+    
+    <i class='bx bxs-right-arrow'></i>アカウント名の変更
+    <div
+        class="delete_account_button"
+    >
+        <a class="change-btn" href="{% url 'accounts:username_change' %}">
+            アカウント名の変更する
+        </a>
+    </div>
+    <br />
+    <br />
+
+    <i class='bx bxs-right-arrow'></i>パスワードの変更
+    <div
+        class="delete_account_button"
+    >
+        <a class="change-btn" href="{% url 'accounts:password_change' %}">パスワードの変更</a>
+    </div>
+    <br />
+    <br />
+
+    <i class='bx bxs-right-arrow'></i>アカウント削除
+    <div
+        class="delete_account_button open-modal"
+    >
+        アカウントを削除する
+    </div>
+
+
+</div>
+<div class='modal'>
+    <div class='overlay close-modal'></div>
+    <div class='modal-content'>
+      <div class='modal-text'>
+        <h1>確認</h1>
+        <p>{{user.username}}さん、本当にアカウントを削除しますか？</p>
+        <p>データは全て削除されます。</p>            
+        <div class='button' id="button">
+        
+            <div class='close-modal no'>
+                いいえ 
+            </div>
+
+            <form action="{% url 'accounts:acccount_delete' user.id %}" method="post" class='yes'>
+                {% csrf_token %}
+                <button type="submit" class="btn">はい</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

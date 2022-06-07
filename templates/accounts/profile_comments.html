@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}" />
+{% endblock %}
+<!--  -->
+{% block title %}{{profile.nick_name}}{% endblock %}
+<!--  -->
+{% block content %}
+<div class="profile">
+  <div class="nickName">{{profile.nick_name}}</div>
+  <div class="username">@{{profile.user.username}}</div>
+  <div class="change-btns">
+    <a class="change-btn" href="{% url 'accounts:profile_change' %}"
+      >プロフィールの変更</a
+    >
+    <!-- <a class="change-btn" href="{% url 'accounts:password_change' %}">パスワードの変更</a> -->
+  </div>
+  <div class="navigation">
+    <div class="favorite_post">
+      <a href="{% url 'accounts:profile' %}"> お気に入り </a>
+    </div>
+    <div class="comments">
+      <a href="{% url 'accounts:profile_comments' %}" class="active_section">
+        コメント
+      </a>
+    </div>
+  </div>
+
+  <div class="comment-list">
+    <div class="comments">
+      {% for comment in comments %}
+      <ul>
+        <li class="card">
+          <div class="date">
+            <div class="created-at">
+              <i class="bx bx-pencil"></i>
+              {{comment.created_at|date:"Y-m-d"}}
+            </div>
+          </div>
+
+          <div class="comment">
+            {{comment.comment}}
+          </div>
+          
+          <div class="title">
+            <a href="{% url 'articles:article-detail' pk=comment.post.id %}">
+              記事：{{ comment.post.title }}
+            </a>
+          </div>
+
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

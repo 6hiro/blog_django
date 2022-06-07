@@ -1,0 +1,200 @@
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    font-weight: 600;
+    width: 100%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    color: #333;
+}
+.markdown h2 {
+    font-size: 1.5rem;
+    margin: 50px 0 5px;
+    border-left: 8px solid var(--main-color);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    /* border-radius: 5px; */
+    margin: 15px 0;
+    padding: 5px 8px;
+    background: #f3f6fd;
+    /* position: sticky;
+    position: -webkit-sticky; */
+    min-height: 40px;
+    z-index: 50;
+    top: 0;
+}
+.markdown h3 {
+    font-size: 1.3rem;
+    /* border-bottom: 2px solid var(--main-color); */
+    border-bottom: 2px solid #333;
+
+    margin: 8px 0;
+    padding: 2px 6px;
+    background: #fcfcfc;
+    /* position: sticky;
+    position: -webkit-sticky; */
+    z-index: 50;
+    top: 0;
+}
+.markdown h4 {
+    font-size: 1.1rem;
+}
+.markdown h5 {
+    font-size: 0.9rem;
+}
+.markdown h6 {
+    font-size: 0.7rem;
+}
+.markdown pre {
+    padding: 5px;
+    /* border-radius: 2px; */
+    /* background: #eee !important; */
+    margin: 10px 0;
+}
+/* toc */
+.markdown .toc {
+    /* background: #f2f2f2; */
+    margin: 35px 0;
+    padding:15px;
+    /* border-radius: 1rem; */
+    border-left: 2px solid;
+    /* box-shadow: 2px 2px 2px rgb(0 0 0 / 10%); */
+}
+.markdown .toc::before{
+    font-size: 1.1rem;
+ content: "目次";
+ top: 0;
+ right: 0;
+}
+.markdown .toc ul{
+    counter-reset: step;
+    padding: 10px;
+}
+.markdown .toc li {
+    /* background: #ddd; */
+    /* text-decoration: none; */
+    list-style: none;
+    padding: 5px;
+    color: #333;
+}
+.markdown .toc li::before{
+    counter-increment: step;
+    /* content: counter(step); */
+    content: counters(step,".") " ";
+    font-weight: 600;
+}
+.markdown .toc a {
+    text-decoration: none;
+    /* overflow-wrap: unset; */
+    /* white-space: nowrap; */
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+/* table */
+.markdown table {
+    border-collapse: collapse;
+    margin: 30px auto;
+    text-align: center;
+}
+.markdown thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.markdown tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.markdown th {
+    background: #011627;
+    color: #d6deeb;
+    font-weight: 400;
+    padding: 5px;
+    border: 1px solid;
+}
+.markdown tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.markdown td {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 5px;
+    border: 1px solid;
+}
+/* blockquote */
+blockquote {
+    font-size: 0.95rem;
+    margin: 1.4rem 0;
+    border-left: 3px solid #b3bfc7;
+    padding: 2px 0 2px 0.7em;
+    color: #626e77;
+}
+/* progresshbar */
+.progressbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0.1rem 4rem 0.1rem;
+    counter-reset: step;
+}
+.progressbar::before, .progress{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;  
+}
+.progress{
+    background-color: var(--main-color);
+    width: 0%;
+    transition: 0.3s ease-in-out;
+}
+.progress-step{
+    width: 35px;
+    height: 35px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.progressbar .progress-step::before{
+    counter-increment: step;
+    content: counter(step);
+}
+.progress-step::after{
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: .80rem;
+}
+.progress-step.active{
+    background-color: var(--main-color);
+
+}
+.progressbar .progress-step.active::before{
+    color: #fff;
+}
+.progressbar .progress-step.active::after{
+    color: var(--main-color);
+}
+/* @media screen and (max-width: 767px) {
+    .markdown h1,
+    .markdown h2,
+    .markdown h3,
+    .markdown h4,
+    .markdown h5,
+    .markdown h6 {
+      padding-top: 60px;
+      margin-top:-60px;
+    }
+  } */

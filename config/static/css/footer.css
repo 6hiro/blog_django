@@ -1,0 +1,22 @@
+.footer {
+    /* display: flex;
+    flex: 1; */
+    padding: 1rem 0;
+    /* padding: 0; */
+    border-top: 1px solid #eaeaea;
+    /* justify-content: center;
+    align-items: center; */
+    background: rgba(0, 0, 0, 0.02);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    /* background-image: linear-gradient(-45deg, #4595fc, #c434e3); */
+  }
+  
+  .footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: #333;
+  }

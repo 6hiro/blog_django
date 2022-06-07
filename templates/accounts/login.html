@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'accounts/css/messages.css' %}" />
+{% endblock %}
+<!--  -->
+{% block title %}ログイン{% endblock %}
+<!--  -->
+{% block content %}
+<div class="card">
+  <div class="title">ログイン</div>
+        <!-- message -->
+
+  <form action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+    <div class="form_group">
+      {% include 'components/messages.html' %}
+      <span id="message"></span>
+
+      <div class="email content">
+        <!-- <i class="bx bx-envelope"></i> -->
+        <input
+          type="email"
+          name="email"
+          class="field"
+          id="emailField"
+          value="{{email}}"
+          placeholder=" "
+          required
+        />
+        <span>メールアドレス</span>
+      </div>
+      <div class="password content">
+        <!-- <i class="bx bx-lock"></i> -->
+        <input
+          type="password"
+          name="password"
+          class="field"
+          id="passwordField"
+          placeholder=" "
+          required
+        />
+        <span>パスワード</span>
+      </div>
+      <button type="submit" class="btn">ログイン</button>
+      <div class="link">
+        <a href="{% url 'accounts:password_reset' %}" class="to-reset">パスワードを忘れた方</a>
+       </div>
+       <hr>
+
+      <div class="link">
+        <a href="{% url 'accounts:registration' %}" class="to-reset">アカウント登録画面へ</a>
+       </div>
+
+
+    </div>
+  </form>
+</div>
+
+{% endblock %}

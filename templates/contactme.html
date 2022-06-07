@@ -1,0 +1,82 @@
+{% extends "base.html" %} {% load static %}
+<!-- css -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/contactme.css' %}" />
+{% endblock %}
+<!-- js -->
+{% block scripts %}
+<!-- <script src="{% static 'quizes/js/quizlist.js' %}" defer></script> -->
+{% endblock scripts %}
+<!-- title -->
+{% block title %} {{title}} {% endblock %}
+<!-- html -->
+{% block content %}
+<div class="card">
+  <div class="title">お問い合わせ</div>
+  <!-- message -->
+
+  <form action="{% url 'accounts:contactme' %}" method="post">
+    {% csrf_token %}
+    <div class="form_group">
+      {% include 'components/messages.html' %}
+      <span id="message"></span>
+
+      <div class="username content">
+        <input
+          type="text"
+          name="username"
+          class="field"
+          id="usernameField"
+          value="{{username}}"
+          placeholder=" "
+          required
+        />
+        <span>名前</span>
+      </div>
+      <div class="email content">
+        <input
+          type="email"
+          name="email"
+          class="field"
+          id="emailField"
+          value="{{email}}"
+          placeholder=" "
+          required
+        />
+        <span>メールアドレス</span>
+      </div>
+      <div class="content">
+        <input
+          type="text"
+          name="subject"
+          class="field"
+          id="subjectField"
+          value="{{subject}}"
+          placeholder=" "
+          required
+        />
+        <span>件名</span>
+      </div>
+
+      <div class="content">
+        <textarea
+          class="field"
+          name="text"
+          rows="5"
+          cols="45"
+          minlength="1"
+          maxlength="1000"
+          id="textField"
+          value="{{text}}"
+          placeholder=" "
+          required
+        ></textarea>
+        <span>テキスト(100文字以内)</span>
+      </div>
+
+      <button type="submit" class="btn">送信</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
