@@ -8,21 +8,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    /* backdrop-filter: blur(2px); */
-    /* box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15); */
   }
-  /* .card::before{
-    content: "";
-    position: absolute;
-    top: -8px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--first-color);
-    background-color: #553af6;
-    border-radius: 50%;
-    opacity: 0.1;
-    z-index: -1;
-  } */
   .card .title {
     text-align: center;
     color: #111;
@@ -80,7 +66,6 @@
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 1px;
-      /* color: #5d62fb; */
       color: #666;
   }
   .field:focus ~ span {

@@ -19,7 +19,6 @@
     font-size: 15px;
     background: #3b72ff;
     border-radius: 10px;
-    /* // margin-top: 10px; */
     margin: 10px auto 0 auto;
     padding: 0.25rem 0.5rem;
     transition: 0.3s;
@@ -60,7 +59,6 @@ body.active-modal {
     transform-origin: center;
     color: #333;
     visibility: hidden;
-    /* visibility: none; */
     opacity: 0;
     transition: all 0.3s;
 }
@@ -72,7 +70,6 @@ body.active-modal {
 }
 .overlay {
     background-color: #ecf0f3;
-    /* transition: all 0.01s; */
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(3px);
 }
@@ -87,7 +84,6 @@ body.active-modal {
     padding: 14px 28px;
     border-radius: 3px;
     width: 85%;
-    /* min-width: 60%; */
     z-index: 9999;
     box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fff;
     padding: 50px;
@@ -128,7 +124,6 @@ body.active-modal {
     margin-right: 20px;
     color: #553af6;
     outline: none;
-    /* border: 1px solid var(--pink-color); */
     border: none;
     cursor: pointer;
     background: unset;
@@ -142,7 +137,6 @@ body.active-modal {
     right: -20px;
     width: 50px;
     height: 50px;
-    /* text-align: center; */
     border-radius: 50%;
     padding: 0 0;
     font-size: 20px;
@@ -156,7 +150,7 @@ body.active-modal {
     margin: 0;
 }
 
-/*------------popup--------*/
+/* popup */
 @media (max-width: 768px) {
     .modal,
     .overlay {

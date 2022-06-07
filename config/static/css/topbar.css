@@ -2,11 +2,7 @@
     width: 100%;
     padding: 1rem 4.5rem 0.2rem;
     font-size: 2rem;
-    /* border-bottom: 2px solid rgb(249,250,251); */
     top: 0;
-    /* background-image: linear-gradient(-45deg, #444, #333); */
-    /* border-radius: 0 2rem; */
-    /* margin: 0 5rem 0 3rem; */
 }
 
 .header .nav {
@@ -54,7 +50,6 @@ header .nav .logo {
     transform: translateY(0px) rotate(45deg);
 }
 .header .nav .icons .active span:nth-child(2) {
-    /* transform: translateY(0px) rotate(-45deg); */
     transform: translateY(0px) rotate(315deg);
 }
 .header .nav .icons .active span:nth-child(3) {
@@ -65,7 +60,6 @@ header .nav .logo {
     display: none;
     top: 100%;
     right: -200%;
-    /* right: 0; */
     width: 100vw;
     height: 100vh;
     padding: 10px;
@@ -86,7 +80,6 @@ header .nav .logo {
     font-size: 36px;
     font-weight: 800;
     padding: 10px 0 0 0;
-    /* border-bottom: 1px solid #fff; */
 }
 .header .menubar .links {
     padding: 10px 0px;
@@ -115,9 +108,7 @@ header .nav .logo {
 }
 .header .search {
     width: 40%;
-    /* margin: 0 auto; */
     display: block;
-    /* box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15); */
 }
 .search__form {
     background: #fff;
@@ -139,7 +130,6 @@ header .nav .logo {
 .search__form button {
     border: none;
     outline: none;
-    /* background: var(--main-color); */
     background: #333;
     padding: 1px 8px;
     border-radius: 0.5rem;
@@ -155,7 +145,6 @@ header .nav .logo {
     
 @media screen and (max-width: 767px) {
     .header{
-        /* display: unset; */
     height: 50px;
         position: fixed;
         z-index: 300;
@@ -177,7 +166,6 @@ header .nav .logo {
         border-radius: unset;
     }
     .header .nav .icons .menuBtn {
-        /* display: block; */
         position: relative;
         width: 35px;
         height: 35px;

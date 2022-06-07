@@ -4,8 +4,6 @@
     width: 350px;
     padding-bottom: 15px;
     background: #fff;
-    /* backdrop-filter: blur(2px); */
-    /* box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15); */
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -29,14 +27,12 @@
 .card .form_group .content .field {
   width: 100%;
   outline: none;
-  /* padding: 5px; */
   padding: 1rem;
   font-size: 18px;
   font-weight: 300;
   color: #111;
   border: none;
   background: rgba(230, 230, 230, 0.6);
-  /* border: 1px solid rgba(230, 230, 230, 0.6); */
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
   margin-bottom: 28px;
@@ -65,7 +61,6 @@
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
-    /* color: #5d62fb; */
     color: #666;
 }
 .field:focus ~ span {
@@ -81,7 +76,6 @@
     outline: none;
     color: #fff;
     font-size: 15px;
-    /* background: #0fbcf9; */
     background: #5d62fb;
     border-radius: 10px;
     margin-bottom: 10px;

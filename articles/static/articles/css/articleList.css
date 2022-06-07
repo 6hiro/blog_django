@@ -1,14 +1,10 @@
 .post-list {
-  /* margin: 0 65px; */
   margin: 0px 5px 0 65px;
   padding: 0px 10px;
-  /* background: #fff; */
-  /* margin-bottom: 75px; */
   border-radius: 10px;
   position: relative;
 }
 .post-list .post-list-title {
-  /* text-align: center; */
   color: #333;
   font-size: 20px;
   font-weight: 600;
@@ -24,8 +20,6 @@
   grid-area: "left";
 }
 .post-list .content .posts .card {
-  /* border-radius: 5px; */
-  /* margin: 15px 0; */
   padding: 15px 15px 0;
   background: #fff;
   border-radius: 10px;
@@ -38,7 +32,6 @@
   display: flex;
   justify-content: space-between;
   color: #777;
-  /* font-size: 20px; */
 }
 .post-list .content .posts .card .title a{
   font-size: 20px;
@@ -52,10 +45,8 @@
   text-decoration: none;
   border-top: 2px solid rgb(249,250,251);
   color: var(--orange-color);
-  /* display: block; */
   min-width: 10px;
   margin: 5px 5px 5px 0;
-  /* padding: 2px 0; */
 }
 .post-list .content .posts .card .tag-list {
   margin: 10px 0;
@@ -63,15 +54,9 @@
 .post-list .content .posts .card .tag-list .tag {
   text-decoration: none;
   color: #5d62fb;
-  /* min-width: 10px; */
   margin: 5px 5px 5px 0;
-  /* padding: 2px 0; */
 }
-/* .post-list .content .posts .card .read-more{
-  color: #0000ee;
-} */
 .post-list .content .categories-tags{
-  /* position: fixed; */
   grid-area: "right";
   max-height: 300px;
   border-radius: 10px;
@@ -80,7 +65,6 @@
   background: #fff;
   border: 1px solid rgba(229, 231, 235, 1);
   box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
-  /* box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15); */
 }
 .post-list .content .categories-tags .categories-title{
   padding: 2px;
@@ -102,7 +86,6 @@
 }
 .post-list .content .categories-tags .category-tag .tag-link {
   text-decoration: none;
-  /* color: var(--main-color); */
   color: #5d62fb;
   min-width: 10px;
   font-size: 14px;
@@ -121,7 +104,6 @@
   margin: 10px 4px;
   background: #f2f2f2;
   box-shadow: 1px 1px 2px #555;
-  /* border-radius: 50%; */
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -136,17 +118,13 @@
   background: var(--main-color);
   color: #f2f2f2;
 }
-/* .pagination .step-links .chevrons{
-  border-radius: 8px;
-} */
 
 
-/* 800pxより狭い場合 */
+/* 767pxより狭い場合 */
 @media screen and (max-width: 767px) {
   .post-list{
     margin: 0;
     padding: 10px 10px;
-    /* height: calc(100vh - 50px); */
   }
   .post-list .post-list-title{
     padding: 10px 0px 0px 15px;

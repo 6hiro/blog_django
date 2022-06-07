@@ -13,7 +13,6 @@
 }
 .article .date {
   color: #777;
-  /* text-align: end; */
   display: flex;
   justify-content: right;
   gap: 1rem;
@@ -21,14 +20,12 @@
 }
 .article .category{
   font-size:1.1rem;
-  /* text-align: end; */
   margin: 10px 0;
 }
 .article .category a{
   color: var(--orange-color);
 }
 .article .tags{
-  /* color: #777; */
   text-align: center;
 }
 .article .tags a{
@@ -75,10 +72,6 @@
     50%{
       transform: scale(1.2);
     }
-    75%{
-      /* background-color: #e10098; */
-      /* box-shadow: #e10098 0 0 0 1px; */
-    }
     100%{
         transform:  scale(1);
     }
@@ -93,7 +86,6 @@
   top: 13rem;
   background: #f2f2f2;
   box-shadow: 1px 1px 2px #555;
-  /* border: 1px solid #dcdcdc; */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -120,12 +112,6 @@
 .article .markdown{
   margin-top: 1.5rem;
   padding-bottom: 3rem;
-  /* border-bottom: 2px solid rgb(249,250,251); */
-}
-.comment_container{
-  /* margin-top: 2rem; */
-  /* border-top: 2px solid rgb(249,250,251); */
-  /* padding-top: 1rem; */
 }
 .comment_container .comment_title{
   font-size: 20px;
@@ -138,7 +124,6 @@
 .comment-list .comments .card {
   padding: 15px;
   background: #fff;
-  /* box-shadow: 2px 2px 4px rgb(0 0 0 / 25%); */
   border: 1px solid rgba(229, 231, 235, 1);
   border-radius: 10px;
   margin-top: 4px;
@@ -176,7 +161,6 @@
   align-items: center;
   background: #f2f2f2;
   box-shadow: 1px 1px 2px #ccc;
-  /* border: 1px solid #dcdcdc; */
   border-radius: 50%;
   margin: 0 0 0 auto;
   display: block;
@@ -194,8 +178,4 @@
     top: unset;
     bottom: 5rem;;
   }
-  /* .article .comment_container{
-    padding-top: 60px;
-    margin-top:-60px;
-  } */
 }

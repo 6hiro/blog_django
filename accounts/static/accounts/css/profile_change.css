@@ -26,7 +26,6 @@
     outline: none;
     background: rgba(230, 230, 230, 0.6);
     padding: 0.5rem 1rem;
-    /* font-size: 14px; */
     margin-bottom: 22px;
     border-radius: 5px;
     transition: 0.3s;
@@ -40,7 +39,6 @@
     outline: none;
     color: #fff;
     font-size: 15px;
-    /* background: #0fbcf9; */
     background: var(--main-color);
     border-radius: 10px;
     margin-top: 15px;

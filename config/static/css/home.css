@@ -1,9 +1,6 @@
 .content{
-    /* margin: 0 65px; */
     margin: 0px 5px 0 65px;
     padding: 0px 10px;
-    /* background: #fff; */
-    /* margin-bottom: 75px; */
     border-radius: 10px;
     position: relative;
 }
@@ -18,7 +15,6 @@
 .content .card a{
   color: #000;
   font-weight: 600;
-  /* color: #0000ee; */
 }
 .content .card .post_title{
   padding: 8px;
@@ -52,6 +48,5 @@
   .content{
     margin: 60px 0 0 0;
     padding: 10px 10px;
-    /* height: calc(100vh - 50px); */
   }
 }

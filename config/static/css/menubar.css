@@ -70,16 +70,12 @@
     height: 60px;
     padding: 0 1rem;
     border-radius: 56px;
-    /* transition: 1s; */
   }
   .hide{
     transform: translate(-50%, 120%);
-    /* transition: 1s; */
   }  
   .nav__list {
     flex-direction: row;
-    /* flex-wrap: none;   */
-    /* column-gap: 25px; */
   }
   .nav_auth{
     display: none;
